@@ -46,17 +46,6 @@ if should("Install Git configs"):
     link("/gitignore", "~/.gitignore")
     print("Installed global gitignore")
 
-if should("Install i3 configs?"):
-    pikaur(["i3-gaps", "polybar", "rofi", "compton", "feh", "dunst"])
-    link("/i3", "~/.config/i3")
-    print("Installed i3 configs")
-    link("/i3/polybar", "~/.config/polybar")
-    print("Installed polybar configs")
-    link("/i3/compton.conf", "~/.config/compton.conf")
-    print("Installed compton.conf")
-    link("/i3/dunst", "~/.config/dunst")
-    print("installed dunst configs")
-
 if should("Install neofetch config?"):
     mkdir("~/.config/neofetch")
     link("/neofetch.conf", "~/.config/neofetch/config.conf")
