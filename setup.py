@@ -46,6 +46,17 @@ if should("Install Git configs"):
     link("/gitignore", "~/.gitignore")
     print("Installed global gitignore")
 
+if should("Install SDDM theme \"Sweeter\"?"):
+    mkdir("/usr/share/sddm/themes/Sweeter")
+    link("/SDDM/Sweeter", "/usr/share/sddm/themes/Sweeter")
+<<<<<<< HEAD
+    mkdir("/usr/lib/sddm/")
+=======
+    mkdir("/usr/lib/sddm/sddm.conf.d/default.conf")
+>>>>>>> master
+    link("/SDDM/sddm.conf", "/usr/lib/sddm/sddm.conf.d/default.conf")
+    print("Installed SDDM theme \"Sweeter\"")
+
 if should("Install neofetch config?"):
     mkdir("~/.config/neofetch")
     link("/neofetch.conf", "~/.config/neofetch/config.conf")
@@ -83,8 +94,6 @@ if should("Install zsh configs?"):
     print("Installed zsh plugins")
     link("/functions.zsh", "~/.zsh/functions.zsh")
     print("Installed functions.zsh")
-    link("/aliases.zsh", "~/.zsh/aliases.zsh")
-    print("Installed aliases.zsh")
     if not os.path.isdir(os.path.expanduser("~/.resh")):
         os.system("curl -fsSL https://raw.githubusercontent.com/curusarn/resh/master/scripts/rawinstall.sh | bash")
         print("Installed resh")
